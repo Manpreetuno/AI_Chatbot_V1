@@ -1,0 +1,82 @@
+/* The Chat Window  */
+.chat-window {
+  width: 400px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;  /* stack vertically */
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* The Messages Area */
+.messages-area {
+  flex: 1;                  /* takes all available space */
+  overflow-y: auto;         /* THIS makes it scrollable! */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;   /* messages stack top to bottom */
+  gap: 10px;
+}
+
+/* The Single Message Bubble */
+.message {
+  max-width: 70%;
+  padding: 10px 15px;
+  border-radius: 18px;
+  font-size: 14px;
+  animation: slideIn 0.3s ease;  /* smooth appear */
+}
+
+/* The User message (right side) */
+.message.user {
+  background: #0084ff;
+  color: white;
+  align-self: flex-end;     /* pushes to RIGHT */
+  border-bottom-right-radius: 4px;
+}
+
+/* The Bot message (left side) */
+.message.bot {
+  background: #f0f0f0;
+  color: black;
+  align-self: flex-start;   /* pushes to LEFT */
+  border-bottom-left-radius: 4px;
+}
+
+/* The Slide in animation */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);  /* starts 10px below */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);     /* slides to normal position */
+  }
+}
+
+/*  All the design properties of The Input Area */
+.input-area {
+  display: flex;
+  padding: 15px;
+  border-top: 1px solid #eee;
+  gap: 10px;
+}
+
+.input-area input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.input-area button {
+  padding: 10px 20px;
+  background: #0084ff;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
